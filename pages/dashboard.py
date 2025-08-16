@@ -3,6 +3,8 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import plotly.express as px
+
 import requests
 
 # Appliquer un style CSS personnalisé
@@ -132,7 +134,8 @@ def get_weather(city="Abidjan"):
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv(r"C:\Users\HP\Documents\mon_dashboard_these\pages\donnees_coton_regions_corrigees.csv")
+        #df = pd.read_csv(r"C:\Users\HP\Documents\mon_dashboard_these\pages\donnees_coton_regions_corrigees.csv")
+        df = pd.read_csv("data/donnees_coton_regions_corrigees.csv")
         # Nettoyage des données
         df = df.dropna()  # Supprimer les lignes avec valeurs manquantes
         df = df[df["Nom_Region"] != "A_VERIFIER"]  # Supprimer la région A_VERIFIER
